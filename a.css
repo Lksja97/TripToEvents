@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Intro Style */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fade-out for intro */
+.hidden {
+    display: none;
+}
+
+/#header {
+    display: flex;
+    justify-content: space-between; /* Für die Navigation nach rechts */
+    align-items: center; /* Vertikale Zentrierung des Logos */
+    padding: 10px 20px; /* Abstände oben, unten und links, rechts */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0; /* Zu Beginn unsichtbar */
+    visibility: hidden; /* Zu Beginn unsichtbar */
+    transition: opacity 1s ease, visibility 1s ease; /* Übergangseffekte für das Einblenden */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Linksbündige Ausrichtung */
+    align-items: center; /* Vertikale Zentrierung */
+    width: 100%;
+    max-width: 200px; /* Maximalbreite für das Logo */
+    padding-bottom: 10px;
+}
+
+.logo {
+    width: 100%; /* Das Logo nimmt den gesamten Containerplatz ein */
+    max-width: 120px; /* Maximale Breite für das Logo */
+}
+
+nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 2%;
+    padding-top: 29px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    justify-content: flex-end; /* Stellt sicher, dass die Links am rechten Rand sind */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #f7f7f7;
+}
+
+/* Slideshow */
+#slideshow {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Stellt sicher, dass das Bild den Bildschirm abdeckt */
+}
+
+/* "Über uns" Section */
+#about {
+    position: relative; /* Damit das Overlay relativ zum Container positioniert wird */
+    height: 100vh; /* Die Höhe des Abschnitts soll die volle Bildschirmhöhe einnehmen */
+    background-image: url('dein-bild.jpg'); /* Bild als Hintergrund */
+    background-size: cover; /* Das Bild soll den gesamten Bereich abdecken */
+    background-position: center; /* Bild mittig ausrichten */
+    display: flex; /* Flexbox für zentrierte Inhalte */
+    justify-content: center; /* Vertikal zentrieren */
+    align-items: center; /* Horizontal zentrieren */
+    text-align: center; /* Text zentrieren */
+}
+
+/* Overlay, das den Text auf den Bildern platziert */
+#about::before {
+    content: ''; /* Leeres Content-Element für das Overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparentes Schwarz für den Textkontrast */
+    z-index: 1;
+}
+
+/* Der Text wird über das Overlay positioniert */
+#about .content {
+    position: relative;
+    z-index: 2; /* Text bleibt über dem Overlay */
+    color: #fff; /* Textfarbe */
+    padding: 20px;
+    max-width: 800px; /* Maximale Breite für den Text */
+}
+
+#about h2 {
+    font-size: 3rem; /* Größere Schriftart */
+    color: white; /* Auffällige Farbe */
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.1rem; /* Standard Textgröße */
+    line-height: 1.6;
+    color: #bbb; /* Hellere Textfarbe für besseren Kontrast */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
